@@ -1,0 +1,41 @@
+<div class='container mt-4 d-flex justify-content-center'>
+
+  <div class='card text-center' style='width: 25rem;'>
+    <h1>短網址產生器</h1>
+    <div>
+      <img
+        style='width:250px'
+        src='https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png'
+        class='card-img-top'
+        alt='...'
+      />
+    </div>
+
+    <div class='card-body'>
+      <h5 class='card-title'></h5>
+      <p class='card-text'><a href='{{shortenerurl}}'><span
+            id='target_text'
+          >{{shortenerurl}}</span></a>{{#if shortenerurl}}<button
+            id='copy-btn'
+            onClick='copyTxt()'
+            class='btn btn-primary ms-2'
+          >Copy</button>{{/if}}</p>
+      <form action='/' method='POST'>
+        <div class='input-group mb-3'>
+          <input
+            type='text'
+            class='form-control'
+            aria-label='Sizing example input'
+            aria-describedby='inputGroup-sizing-default'
+            name='url'
+            placeholder='請輸入網址'
+            value='{{url}}'
+          />
+        </div>
+
+        <button class='btn btn-secondary' type='submit'>shortener</button>
+      </form>
+    </div>
+  </div>
+
+</div>
