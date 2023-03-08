@@ -13,13 +13,17 @@
 
     <div class='card-body'>
       <h5 class='card-title'></h5>
-      <p class='card-text'><a href='{{shortenerurl}}'><span
-            id='target_text'
-          >{{shortenerurl}}</span></a>{{#if shortenerurl}}<button
+      <p class='card-text'>
+        {{#if shortUrl}}
+          <a href='{{origin}}/{{shortUrl}}'><span
+              id='target_text'
+            >{{origin}}/{{shortUrl}}</span></a><button
             id='copy-btn'
             onClick='copyTxt()'
             class='btn btn-primary ms-2'
-          >Copy</button>{{/if}}</p>
+          >Copy</button>
+        {{/if}}
+      </p>
       <form action='/' method='POST'>
         <div class='input-group mb-3'>
           <input
@@ -29,7 +33,7 @@
             aria-describedby='inputGroup-sizing-default'
             name='url'
             placeholder='請輸入網址'
-            value='{{url}}'
+            value='{{originalUrl}}'
           />
         </div>
 

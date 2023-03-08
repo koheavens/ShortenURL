@@ -7,6 +7,7 @@ const port = 3000
 
 const app = express()
 app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
 app.use(routes)
 
 //handlebars
