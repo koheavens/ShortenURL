@@ -26,4 +26,12 @@ router.post('/', (req, res) => {
     .catch((error) => console.log(error))
 })
 
+router.get('/:shortUrl', (req, res) => {
+  const { shortUrl } = req.params
+  URL.findOne({ shortUrl }).then((data) => {
+    if (!data) return res.status(404).send('<h1>短網址不存在</h1>')
+    res.redirect(`${data.originalUrl}`)
+  })
+})
+
 module.exports = router
